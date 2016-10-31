@@ -24,11 +24,6 @@ else
   BUILD_SCRIPT="build32.sh"
 fi
 
-sudo cat >"/etc/security/limits.d/nsvm.conf" <<END
-*       hard    rtprio  2
-*       soft    rtprio  2
-END
-
-exec setuidgid "${USER}" "./{$BUILD_SCRIPT}" -t -u -v "${TRAVIS_BUILD_DIR}/products/"*/nsvm
+bash "./{$BUILD_SCRIPT}" -t -u -v "${TRAVIS_BUILD_DIR}/products/"*/nsvm
 
 popd > /dev/null
