@@ -20,6 +20,7 @@ addons:
 matrix:
   include:
   - os: linux
+    sudo: required
     env: ARCH="linux64x64" FLAVOR="newspeak.cog.spur"
   # - os: linux
   #   env: ARCH="linux64x64" FLAVOR="newspeak.stack.spur"
@@ -28,6 +29,7 @@ matrix:
   # - os: linux
   #   env: ARCH="linux64x64" FLAVOR="squeak.stack.spur"
   - os: linux
+    sudo: required
     env: ARCH="linux32x86" FLAVOR="newspeak.cog.spur"
     addons:
       apt:
