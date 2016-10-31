@@ -24,7 +24,7 @@ else
   BUILD_SCRIPT="build32.sh"
 fi
 
-ulimit -r 2
+sudo ulimit -r 2
 exec setuidgid "${USER}" "./{$BUILD_SCRIPT}" -t -u -v "${TRAVIS_BUILD_DIR}/products/"*/nsvm
 
 popd > /dev/null
