@@ -24,6 +24,20 @@ else
   BUILD_SCRIPT="build32.sh"
 fi
 
-bash "./{$BUILD_SCRIPT}" -t -u -v "${TRAVIS_BUILD_DIR}/products/"*/nsvm
+case "$(uname -s)" in
+  "Linux")
+    NSVM="${TRAVIS_BUILD_DIR}/products/"*/nsvm
+    sudo cat >"/etc/security/limits.d/nsvm.conf" <<END
+*       hard    rtprio  2
+*       soft    rtprio  2
+END
+    ;;
+  "Darwin")
+    VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
+    NSVM="${VM_BUILD_DIR}/CocoaFast.app/Contents/MacOS/Newspeak Virtual Machine"
+    ;;
+esac
+
+exec setuidgid "${USER}" "./{$BUILD_SCRIPT}" -t -u -v "${NSVM}"
 
 popd > /dev/null
