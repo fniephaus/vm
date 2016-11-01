@@ -245,8 +245,6 @@ matrix:
   #   group: edge
 install:
 - ./.travis_install.sh
-before_script:
-  - ulimit -r 2
 script:
 - $CHROOT ./.travis_build.sh
 - ./.travis_test.sh
