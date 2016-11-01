@@ -24,7 +24,10 @@ curl -f -s -L --retry 3 -o "nsboot.zip" "${GH_BASE}/nsboot/archive/${REV_NSBOOT}
 unzip -q "newspeak.zip"
 unzip -q "nsboot.zip"
 
-cd "nsboot"*
+mv "newspeak"* "newspeak"
+mv "nsboot"* "nsboot"
+
+cd "nsboot"
 
 if [[ "${ARCH}" = *"64x64" ]]; then
   BUILD_SCRIPT="./build64.sh"

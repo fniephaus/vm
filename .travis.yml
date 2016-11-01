@@ -193,8 +193,8 @@ matrix:
   #   env: ARCH="macos64x64" FLAVOR="squeak.cog.spur"
   # - os: osx
   #   env: ARCH="macos64x64" FLAVOR="squeak.stack.spur"
-  # - os: osx
-  #   env: ARCH="macos32x86" FLAVOR="newspeak.cog.spur"
+  - os: osx
+    env: ARCH="macos32x86" FLAVOR="newspeak.cog.spur"
   # - os: osx
   #   env: ARCH="macos32x86" FLAVOR="newspeak.stack.spur"
   # - os: osx
