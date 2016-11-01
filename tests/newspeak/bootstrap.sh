@@ -34,8 +34,8 @@ fi
 
 case "$(uname -s)" in
   "Linux")
-    NSVM="${TRAVIS_BUILD_DIR}/products/"*/nsvm
-    sudo bash -c "ulimit -r 2 && ${BUILD_SCRIPT} -t -u -v \"${NSVM}\""
+    COG_PROD="${TRAVIS_BUILD_DIR}/products"
+    sudo bash -c "ulimit -r 2 && ${BUILD_SCRIPT} -t -u -v ${COG_PROD}/*/nsvm"
     ;;
   "Darwin")
     VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
