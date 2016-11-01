@@ -24,8 +24,8 @@ curl -f -s -L --retry 3 -o "nsboot.zip" "${GH_BASE}/nsboot/archive/${REV_NSBOOT}
 unzip -q "newspeak.zip"
 unzip -q "nsboot.zip"
 
-mv "newspeak"* "newspeak"
-mv "nsboot"* "nsboot"
+mv "newspeak-${REV_NEWSPEAK}" "newspeak"
+mv "nsboot-${REV_NSBOOT}" "nsboot"
 
 cd "nsboot"
 
