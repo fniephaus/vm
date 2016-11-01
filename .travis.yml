@@ -19,17 +19,15 @@ addons:
     - uuid-dev
 matrix:
   include:
-  - os: linux
-    sudo: required
-    env: ARCH="linux64x64" FLAVOR="newspeak.cog.spur"
+  # - os: linux
+  #   sudo: required
+  #   env: ARCH="linux64x64" FLAVOR="newspeak.cog.spur"
   # - os: linux
   #   env: ARCH="linux64x64" FLAVOR="newspeak.stack.spur"
   # - os: linux
   #   env: ARCH="linux64x64" FLAVOR="squeak.cog.spur"
   # - os: linux
   #   env: ARCH="linux64x64" FLAVOR="squeak.stack.spur"
-  # - os: linux
-  #   env: ARCH="linux32x86" FLAVOR="newspeak.cog.spur"
   #   addons:
   #     apt:
   #       packages:
@@ -50,6 +48,9 @@ matrix:
   #       - libglapi-mesa:i386
   #       - gcc-multilib
   #       - uuid-dev:i386
+  - os: linux
+    sudo: required
+    env: ARCH="linux32x86" FLAVOR="newspeak.cog.spur"
   # - os: linux
   #   env: ARCH="linux32x86" FLAVOR="newspeak.stack.spur"
   #   addons:
@@ -182,8 +183,8 @@ matrix:
   #       - libglapi-mesa:i386
   #       - gcc-multilib
   #       - uuid-dev:i386
-  - os: osx
-    env: ARCH="macos64x64" FLAVOR="newspeak.cog.spur"
+  # - os: osx
+  #   env: ARCH="macos64x64" FLAVOR="newspeak.cog.spur"
   # - os: osx
   #   env: ARCH="macos64x64" FLAVOR="newspeak.stack.spur"
   # - os: osx
@@ -192,8 +193,8 @@ matrix:
   #   env: ARCH="macos64x64" FLAVOR="squeak.cog.spur"
   # - os: osx
   #   env: ARCH="macos64x64" FLAVOR="squeak.stack.spur"
-  - os: osx
-    env: ARCH="macos32x86" FLAVOR="newspeak.cog.spur"
+  # - os: osx
+  #   env: ARCH="macos32x86" FLAVOR="newspeak.cog.spur"
   # - os: osx
   #   env: ARCH="macos32x86" FLAVOR="newspeak.stack.spur"
   # - os: osx
