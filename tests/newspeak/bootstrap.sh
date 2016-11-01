@@ -6,7 +6,15 @@ readonly REV_NSBOOT="abb722e474e2126203f05245e9da45c065efe991"
 readonly GH_BASE="https://github.com/newspeaklanguage"
 readonly TMP_DIR=$(mktemp -d 2>/dev/null || mktemp -d -t 'newspeak')
 
-echo "Starting Newspeak bootstrapping process..."
+case "$(uname -s)" in
+  "Linux"|"Darwin")
+    echo "Starting Newspeak bootstrapping process..."
+    ;;
+  *)
+    echo "Skipping Newspeak bootstrapping process..."
+    exit
+    ;;
+esac
 
 pushd "${TMP_DIR}" > /dev/null
 
