@@ -37,10 +37,7 @@ case "$(uname -s)" in
   "Linux")
     NSVM="${TRAVIS_BUILD_DIR}/products/"*/nsvm
     EXEC="exec setuidgid ${USER}"
-    sudo cat >"/etc/security/limits.d/nsvm.conf" <<END
-*       hard    rtprio  2
-*       soft    rtprio  2
-END
+    sudo ulimit -r 2
     ;;
   "Darwin")
     VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
