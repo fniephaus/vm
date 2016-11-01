@@ -19,8 +19,9 @@ addons:
     - uuid-dev
 matrix:
   include:
-  # - os: linux
-  #   env: ARCH="linux64x64" FLAVOR="newspeak.cog.spur"
+  - os: linux
+    sudo: required
+    env: ARCH="linux64x64" FLAVOR="newspeak.cog.spur"
   # - os: linux
   #   env: ARCH="linux64x64" FLAVOR="newspeak.stack.spur"
   # - os: linux

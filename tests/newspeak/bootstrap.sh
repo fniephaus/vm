@@ -32,9 +32,11 @@ else
   BUILD_SCRIPT="build32.sh"
 fi
 
+EXEC=""
 case "$(uname -s)" in
   "Linux")
     NSVM="${TRAVIS_BUILD_DIR}/products/"*/nsvm
+    EXEC="exec setuidgid ${USER}"
     sudo cat >"/etc/security/limits.d/nsvm.conf" <<END
 *       hard    rtprio  2
 *       soft    rtprio  2
@@ -46,6 +48,6 @@ END
     ;;
 esac
 
-"./${BUILD_SCRIPT}" -t -u -v "${NSVM}"
+${EXEC} "./${BUILD_SCRIPT}" -t -u -v "${NSVM}"
 
 popd > /dev/null
