@@ -27,20 +27,20 @@ unzip -q "nsboot.zip"
 cd "nsboot"*
 
 if [[ "${ARCH}" = *"64x64" ]]; then
-  BUILD_SCRIPT="build64.sh"
+  BUILD_SCRIPT="./build64.sh"
 else
-  BUILD_SCRIPT="build32.sh"
+  BUILD_SCRIPT="./build32.sh"
 fi
 
 case "$(uname -s)" in
   "Linux")
     NSVM="${TRAVIS_BUILD_DIR}/products/"*/nsvm
-    sudo bash -c "ulimit -r 2 && exec su ${USER} \"${BUILD_SCRIPT}\" -t -u -v \"${NSVM}\""
+    sudo bash -c "ulimit -r 2 && ${BUILD_SCRIPT} -t -u -v \"${NSVM}\""
     ;;
   "Darwin")
     VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
     NSVM="${VM_BUILD_DIR}/CocoaFast.app/Contents/MacOS/Newspeak Virtual Machine"
-    "./${BUILD_SCRIPT}" -t -u -v "${NSVM}"
+    "${BUILD_SCRIPT}" -t -u -v "${NSVM}"
     ;;
 esac
 
