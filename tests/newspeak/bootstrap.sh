@@ -38,6 +38,6 @@ END
     ;;
 esac
 
-"./{$BUILD_SCRIPT}" -t -u -v "${NSVM}"
+"./${BUILD_SCRIPT}" -t -u -v "${NSVM}"
 
 popd > /dev/null
