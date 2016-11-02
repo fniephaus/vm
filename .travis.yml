@@ -246,9 +246,9 @@ matrix:
   #   dist: trusty
   #   group: edge
 install:
-- .travis_install.sh
+- ./.travis_install.sh
 script:
-- $CHROOT .travis_build.sh
-- sudo bash -c "ulimit -r 2 && su ${USER} .travis_test.sh"
+- $CHROOT ./.travis_build.sh
+- sudo bash -c "ulimit -r 2 && su ${USER} ./.travis_test.sh"
 after_success:
-- .travis_deploy.sh
+- ./.travis_deploy.sh
