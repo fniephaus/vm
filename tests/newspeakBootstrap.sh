@@ -39,13 +39,12 @@ BUILD_SCRIPT="./build32.sh"
 case "$(uname -s)" in
   "Linux")
     NVSM="${TRAVIS_BUILD_DIR}/products"/*/nsvm
-    sudo bash -c "ulimit -r 2 && su ${USER} -c \"${BUILD_SCRIPT} -t -u -v ${NSVM}\""
     ;;
   "Darwin")
     VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
     NSVM="${VM_BUILD_DIR}/CocoaFast.app/Contents/MacOS/Newspeak Virtual Machine"
-    "${BUILD_SCRIPT}" -t -u -v "${NSVM}"
     ;;
 esac
+"${BUILD_SCRIPT}" -t -u -v "${NSVM}"
 
 popd > /dev/null
