@@ -2,5 +2,5 @@
 set -e
 
 if [[ "${FLAVOR}" = "newspeak"* ]]; then
-  ./tests/newspeak/bootstrap.sh
+  ./tests/newspeakBootstrap.sh
 fi
