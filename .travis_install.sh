@@ -1,6 +1,17 @@
 set -e
 
-if [[ "${ARCH}" = "linux32x86" ]]; then
+if [[ "${ARCH}" = "linux64x64" ]]; then
+    sudo apt-get install -yq --no-install-suggests --no-install-recommends --force-yes \
+            debhelper \
+            devscripts \
+            libasound2-dev \
+            libssl-dev \
+            libfreetype6-dev \
+            libx11-dev \
+            libxext-dev \
+            gcc-multilib \
+            uuid-dev
+elif [[ "${ARCH}" = "linux32x86" ]]; then
     sudo apt-get remove -q -y gvfs-daemons
     sudo apt-get install -yq --no-install-suggests --no-install-recommends --force-yes \
             devscripts \
