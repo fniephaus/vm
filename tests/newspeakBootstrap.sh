@@ -29,12 +29,11 @@ mv "nsboot-${REV_NSBOOT}" "nsboot"
 
 cd "nsboot"
 
-BUILD_SCRIPT="./build32.sh"
-# if [[ "${ARCH}" = *"64x64" ]]; then
-#   BUILD_SCRIPT="./build64.sh"
-# else
-#   BUILD_SCRIPT="./build32.sh"
-# fi
+if [[ "${ARCH}" = *"64x64" ]]; then
+  BUILD_SCRIPT="./build64.sh"
+else
+  BUILD_SCRIPT="./build32.sh"
+fi
 
 case "$(uname -s)" in
   "Linux")
