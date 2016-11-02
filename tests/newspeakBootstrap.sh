@@ -38,7 +38,7 @@ BUILD_SCRIPT="./build32.sh"
 
 case "$(uname -s)" in
   "Linux")
-    NSVM="${TRAVIS_BUILD_DIR}/products"/*/nsvm
+    NSVM=$(find "${TRAVIS_BUILD_DIR}/products" -type f -name "nsvm" | head -n 1)
     ;;
   "Darwin")
     VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
