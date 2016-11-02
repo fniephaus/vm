@@ -38,8 +38,8 @@ BUILD_SCRIPT="./build32.sh"
 
 case "$(uname -s)" in
   "Linux")
-    COG_PROD="${TRAVIS_BUILD_DIR}/products"
-    sudo bash -c "ulimit -r 2 && su ${USER} -c \"${BUILD_SCRIPT} -t -u -v ${COG_PROD}/*/nsvm\""
+    NVSM="${TRAVIS_BUILD_DIR}/products"/*/nsvm
+    sudo bash -c "ulimit -r 2 && su ${USER} -c \"${BUILD_SCRIPT} -t -u -v ${NSVM}\""
     ;;
   "Darwin")
     VM_BUILD_DIR="${TRAVIS_BUILD_DIR}/build.${ARCH}/${FLAVOR}"
