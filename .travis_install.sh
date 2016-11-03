@@ -12,8 +12,25 @@ if [[ "${ARCH}" = "linux64x64" ]]; then
             gcc-multilib \
             uuid-dev
 elif [[ "${ARCH}" = "linux32x86" ]]; then
-    # sudo apt-get remove -q -y gvfs-daemons
-    sudo apt-get install -qq --force-yes libc6:i386 libuuid1:i386 libx11-6:i386 libsm6:i386 libglu1-mesa:i386
+    sudo apt-get remove -q -y gvfs-daemons
+    sudo apt-get install -yq --no-install-suggests --no-install-recommends --force-yes \
+            devscripts \
+            libc6:i386 \
+            libc6-dev:i386 \
+            libasound2:i386 \
+            libasound2-dev:i386 \
+            libssl-dev:i386 \
+            libssl0.9.8:i386 \
+            libfreetype6-dev:i386 \
+            libx11-dev:i386 \
+            libsm-dev:i386 \
+            libice-dev:i386 \
+            libgl1-mesa-glx:i386 \
+            libgl1-mesa-dev:i386 \
+            libxext-dev:i386 \
+            libglapi-mesa:i386 \
+            gcc-multilib \
+            uuid-dev:i386
 fi
 
 [[ "${ARCH}" != "linux32ARMv6" ]] && exit 0
