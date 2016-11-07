@@ -1,0 +1,16 @@
+SmalltalkCISpec {
+  #loading : [],
+  #testing : {
+    #allTestCases : true,
+    #exclude : {
+      #classes : [ 
+        #DecompilerTests,
+        #FileList2ModalDialogsTest,
+        #IslandVMTweaksTestCase,
+        #MVCToolBuilderTests,
+        #SqueakSSLTest,
+        #StandardSystemFontsTest
+      ]
+    }
+  }
+}

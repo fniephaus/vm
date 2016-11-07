@@ -1,0 +1,18 @@
+SmalltalkCISpec {
+  #loading : [],
+  #testing : {
+    #allTestCases : true,
+    #exclude : {
+      #classes : [ 
+        #BrowserTest,
+        #ClosureCompilerTest,
+        #DecompilerTests,
+        #ExceptionTests,
+        #FileList2ModalDialogsTest,
+        #FontTest,
+        #PackageDependencyTest,
+        #SqueakSSLTest
+      ]
+    }
+  }
+}

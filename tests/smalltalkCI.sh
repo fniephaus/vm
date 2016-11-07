@@ -1,8 +1,6 @@
 #!/bin/bash
 set -e
 
-readonly STON_CONFIG="${TRAVIS_BUILD_DIR}/tests/smalltalk.ston"
-
 if [[ "${ARCH}" = *"64x64" ]]; then
   echo "Skipping SUnit testing on ${ARCH}..."
   exit 0
@@ -59,6 +57,7 @@ unzip -q -o smalltalkCI.zip
 pushd smalltalkCI-* > /dev/null
 
 export SMALLTALK_CI_VM="${VM}"
+readonly STON_CONFIG="${TRAVIS_BUILD_DIR}/tests/${SMALLTALK_VERSION}.ston"
 "./run.sh" -s "${SMALLTALK_VERSION}" "${STON_CONFIG}"
 
 popd > /dev/null
